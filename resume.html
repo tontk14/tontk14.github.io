@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>หน้าแรก GitHub.io ของนักศึกษา</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#d63031; /* สีแดงที่ใกล้เคียงภาพ */
+      --bg:#f7f7f9;
+      --card:#ffffff;
+      --muted:#6b6f76;
+      --maxw:1100px;
+      --radius:12px;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Thai', sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:24px;background:var(--bg);color:#111}
+    .container{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    header{grid-column:1/-1;display:flex;align-items:center;gap:16px;padding:18px;background:linear-gradient(90deg,rgba(0,0,0,0.02),rgba(0,0,0,0.01));border-radius:var(--radius)}
+    .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff7675);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:var(--muted)}
+
+    .card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+    h2{color:var(--accent);margin:0 0 8px 0;font-size:18px}
+    ul{margin:8px 0 0 16px}
+    .small{font-size:14px;color:var(--muted)}
+
+    /* layout for sections similar to the image: left, center, right columns */
+    .col{display:flex;flex-direction:column;gap:16px}
+
+    /* Contact box at bottom of right column */
+    .contact .item{display:flex;flex-direction:column;gap:6px}
+    .skills .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .tag{background:#f1f5f9;padding:6px 10px;border-radius:999px;font-size:13px;border:1px solid rgba(0,0,0,0.04)}
+
+    .projects .repo{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+    .repo a{color:var(--accent);font-weight:600;text-decoration:none}
+    .screenshot{display:flex;gap:8px;margin-top:8px}
+    .screenshot img{width:100%;border-radius:8px;object-fit:cover;max-height:120px}
+
+    .footer-note{grid-column:1/-1;text-align:center;color:var(--muted);font-size:13px;margin-top:8px}
+
+    @media (max-width:1000px){
+      .container{grid-template-columns:1fr 1fr}
+      header{flex-direction:column;align-items:flex-start}
+    }
+    @media (max-width:640px){
+      .container{grid-template-columns:1fr}
+    }
+
+    /* small helpers for numbered headings */
+    .num{font-weight:700;color:var(--accent);margin-right:8px}
+    .heading-row{display:flex;align-items:center;gap:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="card">
+      <div class="avatar">JR</div>
+      <div>
+        <h1>ชื่อ-นามสกุล (ภาษาไทย / English Name)</h1>
+        <p class="lead small">นักศึกษาปี 3 • สาขา / มหาวิทยาลัย • สนใจด้าน AI, Web Dev, Data Science</p>
+      </div>
+    </header>
+
+    <!-- left column -->
+    <aside class="col">
+      <section class="card intro">
+        <div class="heading-row"><span class="num">1.</span><h2>ส่วนแนะนำตัว (Introduction / Profile)</h2></div>
+        <p class="small">จุดประสงค์: ให้คนรู้ว่าเราเป็นใคร สนใจด้านไหน</p>
+        <ul>
+          <li>ชื่อ-นามสกุล (ภาษาไทยและอังกฤษ)</li>
+          <li>รูปโปรไฟล์ (เป็นทางการ/เหมาะสม)</li>
+          <li>คณะ / มหาวิทยาลัย / สาขา</li>
+          <li>ปีการศึกษา หรือสถานะ (เช่น "นักศึกษาปี 3")</li>
+          <li>ความสนใจเฉพาะทาง: AI, Web Dev, Cybersecurity, Data Science</li>
+        </ul>
+      </section>
+
+      <section class="card skills">
+        <div class="heading-row"><span class="num">2.</span><h2>ทักษะ (Skills)</h2></div>
+        <p class="small">จุดประสงค์: ทำให้อาจารย์/ผู้อ่านเห็นว่าเราทำอะไรได้บ้าง</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Java</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Git</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Google Colab</span>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- center column -->
+    <main class="col">
+      <section class="card projects">
+        <div class="heading-row"><span class="num">3.</span><h2>ผลงานที่ผ่านมา (Projects / Portfolio)</h2></div>
+        <p class="small">จุดประสงค์: แสดงสิ่งที่เคยทำจริง ทั้งในรายวิชาและนอกห้องเรียน</p>
+        <ul>
+          <li>เว็บไซต์ที่เคยพัฒนา (Web Project)</li>
+          <li>ระบบจองห้องประชุมออนไลน์</li>
+          <li>AI ทำนายโรคเบาหวาน (Machine Learning / Data Project)</li>
+          <li>Dashboard วิเคราะห์ข้อมูลร้านกาแฟ (Data Visualization)</li>
+        </ul>
+
+        <div class="repo">
+          <strong>ลิงก์ที่ควรใส่:</strong>
+          <p class="small">GitHub Repository ของโปรเจกต์นั้น ๆ / Demo หรือวีดีโอสั้น ๆ (ถ้ามี)</p>
+        </div>
+
+        <div class="screenshot">
+          <img src="https://via.placeholder.com/300x120?text=Screenshot+1" alt="screenshot1">
+          <img src="https://via.placeholder.com/300x120?text=Screenshot+2" alt="screenshot2">
+        </div>
+      </section>
+
+      <section class="card education">
+        <div class="heading-row"><span class="num">4.</span><h2>การศึกษา (Education)</h2></div>
+        <p class="small">เช่น คณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์ • มหาวิทยาลัยราชภัฏอุดรธานี</p>
+      </section>
+
+    </main>
+
+    <!-- right column -->
+    <aside class="col">
+      <section class="card activities">
+        <div class="heading-row"><span class="num">5.</span><h2>กิจกรรมและผลงานอื่น ๆ (Activities / Achievements)</h2></div>
+        <p class="small">เพื่อแสดงความสามารถรอบด้าน ตัวอย่าง:</p>
+        <ul>
+          <li>ผู้เข้าร่วมอบรม "AI for Beginners by Microsoft"</li>
+          <li>เข้าร่วมแข่งขัน UDRU Hackathon 2025</li>
+          <li>ได้รับรางวัลชนะเลิศโครงงานด้าน IoT</li>
+        </ul>
+      </section>
+
+      <section class="card contact">
+        <div class="heading-row"><span class="num">6.</span><h2>ติดต่อ (Contact)</h2></div>
+        <div class="item">
+          <p class="small">Email: <a href="mailto:youremail@university.edu">youremail@university.edu</a></p>
+          <p class="small">GitHub: <a href="#">github.com/your-username</a></p>
+          <p class="small">LinkedIn / Facebook / Portfolio</p>
+          <p class="small">ที่อยู่จังหวัด (ไม่จำเป็นต้องละเอียด)</p>
+        </div>
+      </section>
+
+      <section class="card career">
+        <div class="heading-row"><span class="num">7.</span><h2>องค์ประกอบเสริม (Career / Interest)</h2></div>
+        <p class="small">เป้าหมายในอนาคต หรือ Career Interest: เช่น ต้องการทำงานด้าน Data Science / AI Research / Web Developer</p>
+      </section>
+    </aside>
+
+    <div class="footer-note">แก้ไขข้อความ รูป และลิงก์ให้เป็นข้อมูลจริงก่อนเผยแพร่ — Template โดย AI</div>
+  </div>
+</body>
+</html>
